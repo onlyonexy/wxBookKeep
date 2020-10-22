@@ -1,0 +1,5 @@
+{
+  "usingComponents": {
+    "ec-canvas": "../../../../plugin/ec-canvas/ec-canvas"
+  }
+}

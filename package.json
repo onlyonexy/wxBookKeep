@@ -1,0 +1,19 @@
+{
+  "name": "xiao",
+  "version": "1.0.0",
+  "description": "微信小程序",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "weui-miniprogram": "^1.0.5"
+  },
+  "dependencies": {
+    "miniprogram-sm-crypto": "^0.2.1",
+    "miniprogram-table-component": "^1.1.0",
+    "vant-weapp": "^0.5.28"
+  }
+}

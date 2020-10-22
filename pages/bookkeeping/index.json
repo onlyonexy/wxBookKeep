@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+    "pickerYMDHM": "/components/pickerYMDHM/pickerYMDHM",
+    "select":"/components/select/select"
+    
+  },
+  "navigationBarTitleText": "详情"
+}

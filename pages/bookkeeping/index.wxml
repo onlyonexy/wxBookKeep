@@ -1,0 +1,42 @@
+
+<view class="container">
+  
+
+  <view class="bg-fff p-lr30 border-t">
+    <view class="ipt-wrap border-b flex ai-center">
+      <label for="" class="font14">金额</label>
+      <input type="text" class="ml40 flex1" placeholder="请输入金额" bindinput="money"></input>
+    </view>
+    <view class="ipt-wrap border-b flex ai-center">
+      <label for="" class="font14">类型</label>
+      <view class="option">
+      <select id="select" options="{{type}}" key="code" bindinput="financeType" text="name" bind:change="financeChange"></select>
+      </view>
+    </view>
+
+    <view class="ipt-wrap border-b flex ai-center">
+      <label for="" class="font14">消费类型</label>
+      <view class="option">
+      <select id="select" options="{{costType}}" key="id" text="costName"  bindinput="costType" bind:change="costChange"></select>
+      </view>
+    </view>
+
+    <view class="ipt-wrap border-b flex ai-center">
+      <label for="" class="font14">日期</label>
+      <pickerYMDHM id="time" placeholder = "{{placeholder}}" date = "{{date}}" disabled = "{{disabled}}" bind:onPickerChange="onPickerChange" startDate="{{startDate}}" endDate="{{endDate}}" bindinput="moneyTime">
+       </pickerYMDHM>
+    </view>
+
+ 
+    <view class="ipt-wrap border-b">
+      <textarea name="" id="" class="textarea _w100 p-tb30 lh10" maxlength="100" placeholder="可在此处填写备注说明" bindinput="getRemarksValue" ></textarea>
+    </view>
+
+    <view class="combtn font16 color-fff _w100 bg-btn"  name='test' bindtap="submitData">
+    保存
+  </view>
+
+  </view>
+ 
+ 
+</view>

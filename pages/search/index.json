@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "table-view": "miniprogram-table-component"
+  },
+  "navigationBarTitleText": "查询"
+}

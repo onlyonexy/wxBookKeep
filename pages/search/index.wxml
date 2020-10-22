@@ -1,0 +1,20 @@
+
+<form bindsubmit="formSubmit">
+
+<input type="text" name="project" placeholder='输入项目' value="{{project}}" style='border:1px solid #ccc;height:30px;'/>
+<input type="text" name="id" placeholder='输入' value="{{project}}" style='border:1px solid #ccc;height:30px;'/>
+<button formType="submit" class="btn">搜索</button>    
+</form>
+<table-view 
+      header-row-class-name="header-class"
+      row-class-name="row-class"
+      cell-class-name="cell-class"
+      headers="{{tableHeader}}" 
+      data="{{ row }}" 
+      stripe="{{ stripe }}"
+      height="{{ height }}"
+      border="{{ border }}"
+      bind:rowClick="onRowClick"
+      bind:cellClick="onCellClick" 
+      no-data-msg="{{ msg }}"
+/> 
