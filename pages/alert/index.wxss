@@ -1,0 +1,11 @@
+
+.buttom{
+  width: 100rpx;
+  height: 100rpx;
+  display: flex;
+  border: #3CC51F 1px solid;
+  flex-direction: row;
+  position: fixed;
+  bottom:60rpx;
+  right: 60rpx;
+}

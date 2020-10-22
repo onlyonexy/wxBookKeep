@@ -30,6 +30,11 @@ Page({
       url: '../count/index'
     })
   },
+  alert:function(){
+    wx.navigateTo({
+      url: '../alert/index'
+    })
+  },
   onLoad: function () {
     if (app.globalData.userInfo) {
       this.setData({
@@ -66,8 +71,6 @@ Page({
    })
   },
   makePhoneCall:function( e){
-    console.log('888',e.currentTarget)
-    console.log('获取参数',e.currentTarget.dataset)
     wx.makePhoneCall({
       phoneNumber: '1234567910',
       success:function(){

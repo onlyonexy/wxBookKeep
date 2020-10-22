@@ -9,6 +9,7 @@
     <button bindtap="bookkeeping">记一笔</button>
     <button bindtap="search">查询</button>
     <button bindtap="countEchart">消费情况</button>
+    <button bindtap="alert">alert</button>
     <button bindtap="makePhoneCall" data-num="12345678910">打电话</button>
     <button bindtap="opentable" data-num="https://github.com/habc0807/miniprogram-table-component">表格组件</button>
     

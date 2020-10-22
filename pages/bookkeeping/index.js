@@ -20,12 +20,7 @@ Page({
     type:constant.type
   },
   onLaunch:function(){
-    // const r = common.costType();
-    // this.setData({
-    //    userID: app.globalData.userID ,
-    //    costType:r
-    // });
-    // console.log('lan',this.data.costType)
+
   },
   onLoad: function (){
     let self = this;

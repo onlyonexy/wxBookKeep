@@ -64,18 +64,19 @@ Component({
     ready(){
       // 属性名称转换, 如果不是 { id: '', name:'' } 格式，则转为 { id: '', name:'' } 格式
       let result = []
-      const that = this
-      if (that.data.key !== 'id' || that.data.text !== 'name') {       
-        for (let item of that.data.options) {
-          let { [that.data.key]: id, [that.data.text]: name } = item
+      if (this.data.key !== 'id' || this.data.text !== 'name') {       
+        for (let item of this.data.options) {
+          let { [this.data.key]: id, [this.data.text]: name } = item
           result.push({ id, name })
         }
+      }else{
+        result = this.data.options
       }
-      that.setData({
-        current: Object.assign({}, that.data.defaultOption),
-        result: result
-      })
-      console.log('---select',that.data.result)
+      
+       this.setData({
+         current: Object.assign({}, this.data.defaultOption),
+         result: result
+       })
     },
     attached() {
       

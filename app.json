@@ -2,8 +2,9 @@
   "pages":[
     "pages/index/index",
     "pages/logs/logs",
-    "pages/bookkeeping/index/index",
-    "pages/count/index/index"
+    "pages/bookkeeping/index",
+    "pages/count/index",
+    "pages/alert/index"
   ],
   "window":{
     "backgroundTextStyle":"light",

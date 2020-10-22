@@ -1,0 +1,4 @@
+<!--button-->
+<view class="btn" bindtap="powerDrawer" data-statu="open"></view>
+<image src="../../img/add.png" class="buttom" bindtap="bindAdd">弹窗</image>
+<dialog id='dialog' title='新增' bind:confirmEvent="_confirmEvent"></dialog>

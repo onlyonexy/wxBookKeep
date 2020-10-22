@@ -1,5 +1,6 @@
 const common = require('../../utils/common');
 const api = require('../../utils/api');
+const constant = require('../../utils/constant');
 const app = getApp();
 Page({
   data: {
@@ -35,14 +36,16 @@ Page({
     border: true,
     outBorder: true,
     row: [],
+    monthArr:constant.monthArr,
+    financeType:'',//账单类型
+    moneyMonth:'',//月份
+    costType:'',//消费类型
+    moneyDate: '',//日期
+    remark:'',
     msg: '暂无数据'//没有表格数据提示文字
   },
   formSubmit: function (e) {
-    const that = this
-    console.log('sss',that.data.project,e.detail.value)
-    that.setData({
-      row:[]
-    })
+    this.getData();
   },
   onRowClick: function (e) {
     console.log('行点击事件：', e)
@@ -50,14 +53,45 @@ Page({
   onCellClick: function (e) {
     console.log('单个表格点击事件：', e)
   },
-  onLoad: function () {
-    // api.aa();
-    api.costList({pageNum:1,pageSize:10}).then(res => {
-      console.log(res.data.records)
-      this.setData({"row":res.data.records})
+  monthChange:function(e){
+    this.setData({
+      moneyMonth:  e.detail.id 
     });
-    console.log(this.data.row);
-    console.log('onLoad')
+  },
+  remarkChange:function(e){
+    this.setData({
+      remark:  e.detail.value 
+    });
+  },
+  getData:function(){
+    const params = {
+      pageNum:1,
+      pageSize:10,
+      costType:this.data.costType,
+      moneyMonth:this.data.moneyMonth,
+      moneyDate:this.data.moneyDate,
+      remark:this.data.remark,
+      financeType:this.data.financeType
+    }
+    api.costList(params).then(res => {
+      if(res.code === '0000'){
+        this.setData({
+          row : res.data.records
+        })
+      }else{
+       common.alertConfirmation()
+
+      
+      }
+     
+    });
+
+  },
+  onLoad: function () {
+    wx.setNavigationBarTitle({
+      title: '查询',
+    })
+  this.getData();
   }
 
 })

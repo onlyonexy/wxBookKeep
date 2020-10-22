@@ -1,9 +1,10 @@
 
 <form bindsubmit="formSubmit">
-
-<input type="text" name="project" placeholder='输入项目' value="{{project}}" style='border:1px solid #ccc;height:30px;'/>
-<input type="text" name="id" placeholder='输入' value="{{project}}" style='border:1px solid #ccc;height:30px;'/>
-<button formType="submit" class="btn">搜索</button>    
+      <input type="text" name="project" placeholder='备注' value="{{remark}}"
+       style='border:1px solid #ccc;height:30px;' bindinput="remarkChange"/>
+      <input type="text" name="id" placeholder='输入' value="" style='border:1px solid #ccc;height:30px;'/>
+      <select id="select" options="{{monthArr}}" key="id" bindinput="{{monthArr}}" text="name" bind:change="monthChange"></select>
+      <button formType="submit" class="btn">搜索</button>    
 </form>
 <table-view 
       header-row-class-name="header-class"
