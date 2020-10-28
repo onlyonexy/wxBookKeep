@@ -10,3 +10,6 @@ export const costList  =  params => req.api('/finance/list',params)
 // 保存数据
 export const saveFinance  =  params => req.api('/finance/save',params)
 
+//获取用户微信信息
+export const getopenId  =  params => req.api('/wx/api//user/openid',params)
+

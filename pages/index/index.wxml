@@ -1,19 +1,5 @@
-<!--index.wxml-->
-<view class="container">
-  <view class="userinfo">
-    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
-    <block wx:else>
-      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
-      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
-    </block>
-    <button bindtap="bookkeeping">记一笔</button>
-    <button bindtap="search">查询</button>
-    <button bindtap="countEchart">消费情况</button>
-    <button bindtap="alert">alert</button>
-    <button bindtap="makePhoneCall" data-num="12345678910">打电话</button>
-    <button bindtap="opentable" data-num="https://github.com/habc0807/miniprogram-table-component">表格组件</button>
-    
+<view id="container">
+  <view class="item" wx:for="{{table}}" bindtap="{{item.bindtap}}" data-data="{{item.data}}" wx:key="key">
+    {{item.text}}
   </view>
-
-
 </view>

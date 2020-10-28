@@ -4,6 +4,46 @@ const app = getApp()
 
 Page({
   data: {
+    table:[
+      {
+        image:'',
+        bindtap:'bookkeeping',
+        text:'记一笔'
+    },{
+      image:'search',
+      bindtap:'search',
+      text:'查询'
+    }
+    ,{
+      image:'search',
+      bindtap:'countEchart',
+      text:'统计'
+    }
+    ,{
+      image:'search',
+      bindtap:'alert',
+      text:'弹窗'
+    }
+    ,{
+      image:'search',
+      bindtap:'makePhoneCall',
+      data:null,
+      text:'打电话'
+    }
+    ,{
+      image:'search',
+      bindtap:'login',
+      text:'登录'
+    }
+    ,{
+      image:'search',
+      bindtap:'opentable',
+      data:{
+        url:'https://github.com/habc0807/miniprogram-table-component'
+      },
+      text:'表格组件'
+    }
+    ],
     motto: 'Hello World',
     userInfo: {},
     hasUserInfo: false,
@@ -33,6 +73,11 @@ Page({
   alert:function(){
     wx.navigateTo({
       url: '../alert/index'
+    })
+  },
+  login:function(){
+    wx.navigateTo({
+      url: '../login/index'
     })
   },
   onLoad: function () {

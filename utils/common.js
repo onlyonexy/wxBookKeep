@@ -1,4 +1,5 @@
 const api = require('./api');
+export const req_ok = '0000'
 export const costType = ()=>{
   const type = getStorage('costType');
   if(type === null || type === '' || type === []){
@@ -38,4 +39,13 @@ export const alertConfirmation = (message='系统错误!',title = '系统提示'
       }
    }
  })
+}
+export const alertSu = (message = '成功')=> {
+  wx.showToast({
+    title: message,
+    icon: 'succes',
+    duration: 1000,
+    mask:true
+})
+
 }

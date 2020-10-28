@@ -1,4 +1,6 @@
 //app.js
+const api = require('./utils/api');
+import req_ok  from './utils/common'
 App({
   onLaunch: function () {
     // 展示本地存储能力
@@ -11,26 +13,20 @@ App({
       success: res => {
         // 发送 res.code 到后台换取 openId, sessionKey, unionId
         if (res.code) {
-          console.log('通过login接口的code换取openid')
-           wx.request({
-             url: 'https://api.weixin.qq.com/sns/jscode2session',
-             data: {
-                //填上自己的小程序唯一标识
-               appid: 'wxca3ddb28425eb0c8',
-                //填上自己的小程序的 app secret
-               secret: 'df6cfd746a202178b26c8a4842fb82bd',
-               grant_type: 'authorization_code',
-               js_code: res.code
-             },
-             method: 'GET',
-             header: { 'content-type': 'application/json'},
-             success: function(openIdRes){
-                  console.info("登录成功返回的openId：" + openIdRes.data.openid);
-             },
-             fail: function(error) {
-                 console.info("获取用户openId失败");
-                 console.info(error);
-             }
+          api.getopenId({wxCode:res.code}).then(res=>{
+            if(res.code === req_ok){
+              console.info("登录成功返回的openId：" + res.data.openId);
+            }else{
+              //没有获取到登录信息
+              // wx.navigateTo({
+              //   url: '../login/index'
+              // })
+            }
+            
+          })
+        }else{
+          wx.navigateTo({
+            url: '..pages/login/index'
           })
         }
 
@@ -46,7 +42,6 @@ App({
             success: res => {
               // 可以将 res 发送给后台解码出 unionId
               this.globalData.userInfo = res.userInfo
-
               // 由于 getUserInfo 是网络请求，可能会在 Page.onLoad 之后才返回
               // 所以此处加入 callback 以防止这种情况
               if (this.userInfoReadyCallback) {

@@ -4,7 +4,8 @@
     "pages/logs/logs",
     "pages/bookkeeping/index",
     "pages/count/index",
-    "pages/alert/index"
+    "pages/alert/index",
+    "pages/login/index"
   ],
   "window":{
     "backgroundTextStyle":"light",

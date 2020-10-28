@@ -1,5 +1,5 @@
 const baseUrl = 'http://localhost/';
-
+const COMMON = require('./common');
 const http = ( url = '', param = {},method = 'post', ...other ) => {
     wx.showLoading({
         title: '请求中，请耐心等待..'
@@ -20,7 +20,7 @@ const http = ( url = '', param = {},method = 'post', ...other ) => {
                 if (res.statusCode >= 200 && res.statusCode < 300) {
                     resolve(res.data)
                 } else {
-                    
+                    COMMON.alertConfirmation('系统错误请联系管理员！')
                     reject(res)
                 }
             }
