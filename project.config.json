@@ -20,7 +20,7 @@
     "checkInvalidKey": true,
     "checkSiteMap": true,
     "uploadWithSourceMap": true,
-    "compileHotReLoad": false,
+    "compileHotReLoad": true,
     "useMultiFrameRuntime": false,
     "useApiHook": true,
     "babelSetting": {
@@ -29,15 +29,17 @@
       "outputPath": ""
     },
     "enableEngineNative": false,
+    "bundle": false,
     "useIsolateContext": true,
     "useCompilerModule": true,
     "userConfirmedUseCompilerModuleSwitch": false,
+    "userConfirmedBundleSwitch": false,
     "packNpmManually": false,
     "packNpmRelationList": [],
     "minifyWXSS": true
   },
   "compileType": "miniprogram",
-  "libVersion": "2.13.1",
+  "libVersion": "2.13.2",
   "appid": "wxca3ddb28425eb0c8",
   "projectname": "xiao",
   "debugOptions": {
@@ -63,6 +65,13 @@
     "gamePlugin": {
       "list": []
     },
+    "packNpmManually": true,
+    "packNpmRelationList": [
+      {
+        "packageJsonPath": "./package.json",
+        "miniprogramNpmDistDir": "./miniprogram/"
+      }
+    ],
     "miniprogram": {
       "list": []
     }

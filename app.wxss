@@ -1,4 +1,4 @@
-
+@import '/miniprogram_npm/@vant/weapp/common/index.wxss';
 .container {height: 100%; min-height: 100vh; display: flex;flex-direction: column; box-sizing: border-box;
   background: #f5f5f5;overflow-x:hidden;} 
 view,text{font-size: 13px;}

@@ -12,8 +12,9 @@
     "weui-miniprogram": "^1.0.5"
   },
   "dependencies": {
+    "@vant/weapp": "^1.6.3",
+    "crypto-js": "^4.0.0",
     "miniprogram-sm-crypto": "^0.2.1",
-    "miniprogram-table-component": "^1.1.0",
-    "vant-weapp": "^0.5.28"
+    "miniprogram-table-component": "^1.1.0"
   }
 }
