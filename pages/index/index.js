@@ -33,7 +33,12 @@ Page({
     ,{
       image:'search',
       bindtap:'login',
-      text:'登录'
+      text:'绑定'
+    }
+    ,{
+      image:'search',
+      bindtap:'location',
+      text:'位置'
     }
     ,{
       image:'search',
@@ -78,6 +83,11 @@ Page({
   login:function(){
     wx.navigateTo({
       url: '../login/index'
+    })
+  },
+  location:function(){
+    wx.navigateTo({
+      url: '../location/index'
     })
   },
   onLoad: function () {

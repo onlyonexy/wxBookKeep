@@ -1,15 +1,18 @@
-const { type } = require('./constant')
-const req = require('./request')
-
+import {
+  api
+} from './request'
 //消费类型
-export const costType  =  params => req.api('/costType/all',params,'get')
+export const costTypeList = params => api('/code/getCode', params)
 
 //消费列表
-export const costList  =  params => req.api('/finance/list',params)
+export const costList = params => api('/finance/list', params)
 
 // 保存数据
-export const saveFinance  =  params => req.api('/finance/save',params)
+export const saveFinance = params => api('/finance/save', params)
 
 //获取用户微信信息
-export const getopenId  =  params => req.api('/wx/api//user/openid',params)
+export const getopenId = params => api('/wx/api/user/openid', params)
 
+
+//获取用户微信信息
+export const userBind = params => api('/wx/api/user/bind', params)

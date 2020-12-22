@@ -1,6 +1,11 @@
-
 <view class="container">
-  
+  <van-cell-group>
+    <van-field model:value="{{ value }}" clearable label="用户名" placeholder="请输入用户名" border="{{ true }}" />
+    <van-field model:value="{{ money }}" clearable label="金额" placeholder="请输入金额" type="number" border="{{ false }}" />
+    <van-field value="{{ message }}" label="备注" clearable type="textarea" placeholder="可在此处填写备注说明" autosize
+      border="{{ false }}" />
+
+  </van-cell-group>
 
   <view class="bg-fff p-lr30 border-t">
     <view class="ipt-wrap border-b flex ai-center">
@@ -10,33 +15,49 @@
     <view class="ipt-wrap border-b flex ai-center">
       <label for="" class="font14">类型</label>
       <view class="option">
-      <select id="select" options="{{type}}" key="code" bindinput="financeType" text="name" bind:change="financeChange"></select>
+        <!-- <select id="select" options="{{type}}" key="code" bindinput="financeType" text="name" bind:change="financeChange"></select> -->
+        <van-dropdown-menu>
+          <van-dropdown-item value="{{ value1 }}" options="{{ type }}" />
+        </van-dropdown-menu>
+
+
       </view>
     </view>
 
     <view class="ipt-wrap border-b flex ai-center">
       <label for="" class="font14">消费类型</label>
       <view class="option">
-      <select id="select" options="{{costType}}" key="id" text="costName"  bindinput="costType" bind:change="costChange"></select>
+        <!-- <select id="select" options="{{costType}}" key="id" text="costName" bindinput="costType"
+          bind:change="costChange"></select> -->
+        <van-dropdown-menu>
+          <van-dropdown-item value="{{ value1 }}" options="{{ costType }}" />
+        </van-dropdown-menu>
       </view>
+
     </view>
 
     <view class="ipt-wrap border-b flex ai-center">
-      <label for="" class="font14">日期</label>
-      <pickerYMDHM id="time" placeholder = "{{placeholder}}" date = "{{date}}" disabled = "{{disabled}}" bind:onPickerChange="onPickerChange" startDate="{{startDate}}" endDate="{{endDate}}" bindinput="moneyTime">
-       </pickerYMDHM>
+
+      <!-- <van-datetime-picker type="date" value="{{ currentDate }}" bind:input="onInput" min-date="{{ minDate }}"
+        formatter="{{ formatter }}" /> -->
+      <view class="option">
+        <van-cell title="日期" value="{{ currentDate }}" bind:click="onDisplay" />
+        <van-calendar show="{{ show }}" bind:close="onClose" bind:confirm="onConfirm" max-date="{{ maxDate }}"  min-date="{{ minDate }}"/>
+      </view>
     </view>
 
- 
+
     <view class="ipt-wrap border-b">
-      <textarea name="" id="" class="textarea _w100 p-tb30 lh10" maxlength="100" placeholder="可在此处填写备注说明" bindinput="getRemarksValue" ></textarea>
+      <textarea name="" id="" class="textarea _w100 p-tb30 lh10" maxlength="100" placeholder="可在此处填写备注说明"
+        bindinput="getRemarksValue"></textarea>
+    </view>
+    <view>
+      <van-button type="primary" bindtap="submitData"> 保存</van-button>
     </view>
 
-    <view class="combtn font16 color-fff _w100 bg-btn"  name='test' bindtap="submitData">
-    保存
-  </view>
+
 
   </view>
- 
- 
+
+
 </view>

@@ -1,6 +1,8 @@
-const common = require('../../utils/common');
-const api = require('../../utils/api');
+import {costList}  from '../../utils/api';
 const constant = require('../../utils/constant');
+import {
+  alertFail
+} from "../../utils/common"
 const app = getApp();
 Page({
   data: {
@@ -27,7 +29,7 @@ Page({
         label: '备注'
       },
       {
-        prop: 'costType',
+        prop: 'costName',
         width: 110,
         label: '类型'
       }
@@ -73,15 +75,13 @@ Page({
       remark:this.data.remark,
       financeType:this.data.financeType
     }
-    api.costList(params).then(res => {
+    costList(params).then(res => {
       if(res.code === '0000'){
         this.setData({
-          row : res.data.records
+          row : res.data.data
         })
       }else{
-       common.alertConfirmation()
-
-      
+        alertFail( res.message)
       }
      
     });
@@ -91,7 +91,7 @@ Page({
     wx.setNavigationBarTitle({
       title: '查询',
     })
-  this.getData();
+   this.getData();
   }
 
 })

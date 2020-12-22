@@ -1,6 +1,12 @@
 {
   "usingComponents": {
     "table-view": "miniprogram-table-component",
-    "select":"/components/select/select"
+    "select":"../../components/select/select",
+    "van-button": "@vant/weapp/button/index",
+    "van-cell-group":"@vant/weapp/cell-group/index",
+    "van-field": "@vant/weapp/field/index",
+    "van-datetime-picker": "@vant/weapp/datetime-picker/index",
+    "van-action-sheet": "@vant/weapp/action-sheet/index"
+    
   }
 }
